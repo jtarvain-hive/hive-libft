@@ -6,11 +6,11 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:50:14 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/16 09:58:11 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:38:31 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 	char	*last;

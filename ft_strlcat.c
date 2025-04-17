@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 11:09:00 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/17 09:19:43 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/16 18:22:42 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/04/17 09:02:48 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
-{
-	long	total;
-	int		negative;
-
-	total = 0;
-	negative = 1;
-	while (ft_isspace(*nptr))
-		nptr++;
-	if (*nptr++ == '-')
-		negative *= -1;
-	else if (*nptr == '+')
-		nptr++;
-	while (ft_isdigit(*nptr++))
-	{
-		total *= 10 + (*nptr - '0');
-		if (total < 0 && negative == 1)
-			return (-1);
-		if (total < 0 && negative == -1)
-			return (0);
-	}
-	return ((int)(total * negative));
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{	
+	return (ft_strlen(dst) + ft_strlen(src));
 }

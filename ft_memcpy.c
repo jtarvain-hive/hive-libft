@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 11:09:00 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/17 09:19:43 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/17 13:50:47 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/04/17 13:56:19 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	long	total;
-	int		negative;
+	size_t			i;
+	unsigned char	*byte;
 
-	total = 0;
-	negative = 1;
-	while (ft_isspace(*nptr))
-		nptr++;
-	if (*nptr++ == '-')
-		negative *= -1;
-	else if (*nptr == '+')
-		nptr++;
-	while (ft_isdigit(*nptr++))
+	i = 0;
+	byte = dest;
+	while (i < n)
 	{
-		total *= 10 + (*nptr - '0');
-		if (total < 0 && negative == 1)
-			return (-1);
-		if (total < 0 && negative == -1)
-			return (0);
+		*(byte + i) =  (unsigned char)*(src + i);
+		i++;
 	}
-	return ((int)(total * negative));
+	return (dest);
 }
