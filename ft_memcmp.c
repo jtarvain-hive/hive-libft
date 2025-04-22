@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 13:50:47 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/18 20:37:43 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/18 20:45:51 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/04/22 10:54:51 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
-	unsigned char	*d_byte;
-	unsigned char	*s_byte;
+	unsigned char	*value1;
+	unsigned char	*value2;
 
 	i = 0;
-	d_byte = (unsigned char *)dest;
-	s_byte = (unsigned char *)src;
-	while (i < n)
+	value1 = (unsigned char *)s1;
+	value2 = (unsigned char *)s2;
+	while ((*value1 && *value2) && i < n)
 	{
-		*(d_byte + i) = *(s_byte + i);
+		if (*(value1 + i) != *(value2 + i))
+			return ((int)(*value1 - *value2));
 		i++;
 	}
-	return (dest);
+	return (0);
 }

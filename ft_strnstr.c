@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 13:50:47 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/18 20:37:43 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/22 11:58:54 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/04/22 14:09:26 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t			i;
-	unsigned char	*d_byte;
-	unsigned char	*s_byte;
+	size_t			j;
+	unsigned char	*p;
 
 	i = 0;
-	d_byte = (unsigned char *)dest;
-	s_byte = (unsigned char *)src;
-	while (i < n)
+	if (!*little)
+		return (big);
+	while (i < len && *big)
 	{
-		*(d_byte + i) = *(s_byte + i);
+		j = 0;
+		if (*(big + i) == *(little + j))
+		{
+			p = big + i;
+			while ((*(big + i + j) == *(little + j))
+				&& i + j < len)
+			{
+				if (!*(little + j + 1))
+					return (p);
+				j++;
+			}
+		}
 		i++;
 	}
-	return (dest);
+	return (0);
 }

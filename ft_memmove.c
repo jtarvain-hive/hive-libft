@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 13:50:47 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/18 20:37:43 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/22 11:39:09 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/04/22 11:57:15 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t			i;
-	unsigned char	*d_byte;
-	unsigned char	*s_byte;
+	unsigned char	*d;
+	unsigned char	*s;
 
-	i = 0;
-	d_byte = (unsigned char *)dest;
-	s_byte = (unsigned char *)src;
-	while (i < n)
+	d = (unsigned char *)d;
+	s = (unsigned char *)s;
+	if (s < d && s + n >= d)
 	{
-		*(d_byte + i) = *(s_byte + i);
-		i++;
+		i = n;
+		while (i > 0)
+		{
+			*(d + i - 1) = *(s + i - 1);
+			i--;
+		}
+	}
+	else
+	{
+		i = 0;
+		while (i < n)
+		{
+			*(d + i) = *(s + i);
+			i++;
+		}
 	}
 	return (dest);
 }

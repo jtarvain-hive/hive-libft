@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 09:35:12 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/17 11:38:04 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/18 18:58:33 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char	*byte;
 
 	i = 0;
-	byte = s;
+	byte = (unsigned char *)s;
 	while (i < n)
 	{
 		*(byte + i) = 0;
