@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 18:22:42 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/23 12:49:51 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/23 13:58:07 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/04/23 14:19:57 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	srclen;
-	size_t	dstlen;
-	size_t	i;
+	void	*p;
 
-	if (!dst || !src)
+	if (!nmemb || !size)
+		return ((void *)malloc(0));
+	if (nmemb * size < 0)
+		return ((void *)malloc(0));
+	p = malloc(nmemb * size);
+	if (p == 0)
 		return (0);
-	srclen = ft_strlen(src);
-	dstlen = ft_strlen(dst);
-	i = 0;
-	if (size == 0)
-		return (srclen);
-	if (dstlen >= size)
-		return (size + srclen);
-	while (*(src + i) && dstlen + i < size - 1)
-	{
-		*(dst + (dstlen + i)) = *(src + i);
-		i++;
-	}
-	*(dst + (dstlen + i)) = 0;
-	return (dstlen + srclen);
+	ft_bzero(p, nmemb * size);
+	return (p);
 }

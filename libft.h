@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 09:39:23 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/17 09:02:24 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:39:02 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define LIBFT_H
 
 #include <limits.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -29,6 +30,6 @@ char	*strrchr(const char *s, int c);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
 int	ft_isspace(int c);
-int	ft_atoi(int c);
+int	ft_atoi(const char *nptr);
 
 #endif
