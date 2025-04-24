@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:08:00 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/24 11:42:51 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/24 16:11:37 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
 	p = (char *)malloc((len + 1) * sizeof(char));
 	if (!p)
 		return (0);
