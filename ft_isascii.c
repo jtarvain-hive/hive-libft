@@ -6,11 +6,11 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:36 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/15 11:45:16 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/24 09:59:00 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	return (c >= 0 || c <= 127);
+	return (c >= 0 && c <= 127);
 }

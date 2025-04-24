@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 14:47:28 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/23 15:07:06 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/24 09:57:40 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strdup(const char *s)
 {
-	unsigned char	*p;
-	size_t			i;
-	size_t			len;
+	char	*p;
+	size_t	i;
+	size_t	len;
 
 	len = ft_strlen(s);
 	i = 0;
-	p = (unsigned char *)malloc((len + 1) * sizeof(unsigned char));
+	p = (char *)malloc((len + 1) * sizeof(char));
 	if (!p)
 		return (0);
 	while (*(s + i))

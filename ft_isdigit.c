@@ -6,11 +6,11 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:05:22 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/15 10:26:02 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/24 09:58:56 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	return (c >= '0' || c <= '9');
+	return (c >= '0' && c <= '9');
 }

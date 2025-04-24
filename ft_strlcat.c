@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:22:42 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/23 12:49:51 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/24 11:06:11 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dstlen;
 	size_t	i;
 
-	if (!dst || !src)
-		return (0);
 	srclen = ft_strlen(src);
 	dstlen = ft_strlen(dst);
 	i = 0;

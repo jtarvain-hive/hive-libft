@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:58:54 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/22 14:09:26 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/24 11:34:45 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t			i;
-	size_t			j;
-	unsigned char	*p;
+	size_t	i;
+	size_t	j;
+	char	*p;
 
 	i = 0;
 	if (!*little)
-		return (big);
-	while (i < len && *big)
+		return ((char *)big);
+	while (i < len && *(big + i))
 	{
 		j = 0;
 		if (*(big + i) == *(little + j))
 		{
 			p = big + i;
 			while ((*(big + i + j) == *(little + j))
-				&& i + j < len)
+				&& i + j < len
+				&& *(little + j))
 			{
 				if (!*(little + j + 1))
-					return (p);
+					return ((char *)p);
 				j++;
 			}
 		}

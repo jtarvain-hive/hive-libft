@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 20:45:51 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/22 10:54:51 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:06:06 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	value1 = (unsigned char *)s1;
 	value2 = (unsigned char *)s2;
-	while ((*value1 && *value2) && i < n)
+	while (i < n)
 	{
 		if (*(value1 + i) != *(value2 + i))
-			return ((int)(*value1 - *value2));
+			return ((int)(*(value1 + i) - *(value2 + i)));
 		i++;
 	}
 	return (0);
