@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:09:00 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/23 14:39:59 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/25 10:49:59 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *nptr)
 {
-	long	total; 
+	long	total;
 	int		negative;
 
 	total = 0;
