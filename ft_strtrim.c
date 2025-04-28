@@ -6,13 +6,43 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:16:34 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/25 12:20:04 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/28 23:13:47 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	isset(const char c, const char *set)
+static int	is_set(const char c, const char *set);
+static int	start_index(const char *s1, const char *set);
+static int	end_index(const char *s1, const char *set);
+
+/* Returns a new string without 'set' characters from each end of the string*/
+char	*ft_strtrim(const char *s1, const char *set)
+{
+	char	*new_str;
+	int		i;
+	int		start;
+	int		end;
+
+	if (!s1 || !set)
+		return (s1);
+	start = start_index(s1, set);
+	end = end_index(s1, set);
+	new_str = (char *)malloc((end - start + 1) * sizeof(char));
+	if (!new_str)
+		return (0);
+	i = 0;
+	while (start > end)
+	{
+		*(new_str + i) = *(s1 + start);
+		i++;
+		start++;
+	}
+	*(new_str + i) = 0;
+	return (new_str);
+}
+
+static int	is_set(const char c, const char *set)
 {
 	while (*set)
 	{
@@ -23,46 +53,21 @@ static int	isset(const char c, const char *set)
 	return (0);
 }
 
-static int	startindex(const char *s1, const char *set)
+static int	start_index(const char *s1, const char *set)
 {
 	int	i;
 
-	while (isset(s1 + i, set))
+	while (is_set(s1 + i, set))
 		i++;
 	return (i);
 }
 
-static int	endindex(const char *s1, const char *set)
+static int	end_index(const char *s1, const char *set)
 {
 	int	len;
 
 	len = ft_strlen(s1);
-	while (isset(*(s1 + len), set))
+	while (is_set(*(s1 + len), set))
 		len--;
 	return (len);
-}
-
-char	*ft_strtrim(const char *s1, const char *set)
-{
-	char	*newstr;
-	int		i;
-	int		start;
-	int		end;
-
-	if (!s1 || !set)
-		return (s1);
-	start = startindex(s1, set);
-	end = endindex(s1, set);
-	newstr = (char *)malloc((end - start + 1) * sizeof(char));
-	if (!newstr)
-		return (0);
-	i = 0;
-	while (start > end)
-	{
-		*(newstr + i) = *(s1 + start);
-		i++;
-		start++;
-	}
-	*(newstr + i) = 0;
-	return (newstr);
 }

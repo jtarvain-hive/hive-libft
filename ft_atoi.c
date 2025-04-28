@@ -6,17 +6,15 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 11:09:00 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/28 20:11:16 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/28 23:31:17 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
-{
-	return ((c >= 9 && c <= 13) || c == 32);
-}
+static int	ft_isspace(int c);
 
+/* Converts a number from a string to an integer*/
 int	ft_atoi(const char *nptr)
 {
 	long	total;
@@ -44,3 +42,9 @@ int	ft_atoi(const char *nptr)
 	}
 	return ((int)(total * negative));
 }
+
+static int	ft_isspace(int c)
+{
+	return ((c >= 9 && c <= 13) || c == 32);
+}
+

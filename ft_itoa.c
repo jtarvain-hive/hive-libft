@@ -6,11 +6,42 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:47:18 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/28 20:10:33 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/28 23:13:50 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static long	negative_check(int nbr, int *negative);
+static int	nbr_len(long nbr);
+static char	*alloc_str(long total, int len, int negative);
+
+/* Converts an integer into a string*/
+char	*ft_itoa(int n)
+{
+	long	convert;
+	char	*return_str;
+	int		negative;
+	int		len;
+
+	if (n == 0)
+	{
+		return_str = (char *)malloc(2 * sizeof(char));
+		if (!return_str)
+			return (0);
+		*(return_str + 0) = '0';
+		*(return_str + 1) = 0;
+	}
+	else
+	{
+		convert = negative_check(n, &negative);
+		len = nbr_len(convert);
+		return_str = alloc_str(convert, len, negative);
+		if (!return_str)
+			return (0);
+	}
+	return (return_str);
+}
 
 static long	negative_check(int nbr, int *negative)
 {
@@ -59,30 +90,4 @@ char	*alloc_str(long total, int len, int negative)
 		total /= 10;
 	}
 	return (allocated_str);
-}
-
-char	*ft_itoa(int n)
-{
-	long	convert;
-	char	*return_str;
-	int		negative;
-	int		len;
-
-	if (n == 0)
-	{
-		return_str = (char *)malloc(2 * sizeof(char));
-		if (!return_str)
-			return (0);
-		*(return_str + 0) = '0';
-		*(return_str + 1) = 0;
-	}
-	else
-	{
-		convert = negative_check(n, &negative);
-		len = nbr_len(convert);
-		return_str = alloc_str(convert, len, negative);
-		if (!return_str)
-			return (0);
-	}
-	return (return_str);
 }

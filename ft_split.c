@@ -6,11 +6,38 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:20:34 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/28 10:43:57 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/28 23:27:18 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	strcount(const char *s, char c);
+static size_t	word_len(const char *s, char c, size_t *index);
+static char		*assign(const char *s, size_t start, size_t len);
+static void		alloc_strings(char **array, const char *s, char c, size_t strs);
+
+/* Splits string 's' into an array of strings using delimiter 'c'*/
+char	**ft_split(const char *s, char c)
+{
+	char	**strings;
+	size_t	count;
+
+	if (!s)
+		return (0);
+	count = strcount(s, c);
+	strings = (char **)malloc((count + 1) * sizeof(char *));
+	if (!strings)
+		return (0);
+	alloc_strings(strings, s, c, count);
+	if (!strings)
+	{
+		free(strings);
+		return (0);
+	}
+	strings[count] = 0;
+	return (strings);
+}
 
 static size_t	strcount(const char *s, char c)
 {
@@ -31,23 +58,23 @@ static size_t	strcount(const char *s, char c)
 	return (counter);
 }
 
-static size_t	wordlen(const char *s, char c, size_t *index)
+static size_t	word_len(const char *s, char c, size_t *index)
 {
-	size_t	wordlen;
+	size_t	len;
 
-	wordlen = 0;
+	len = 0;
 	while (*(s + *index) != c && *(s + *index) != 0)
 	{
 		(*index)++;
-		wordlen++;
+		len++;
 	}
 	if (*(s + *index) == c || *(s + *index) == 0)
 	{
 		(*index)++;
-		return (wordlen);
+		return (len);
 	}
 	else
-		return (wordlen);
+		return (len);
 }
 
 static char	*assign(const char *s, size_t start, size_t len)
@@ -68,7 +95,7 @@ static char	*assign(const char *s, size_t start, size_t len)
 	return (new_str);
 }
 
-static void	allocstrings(char **array, const char *s, char c, size_t strs)
+static void	alloc_strings(char **array, const char *s, char c, size_t strs)
 {
 	size_t	i;
 	size_t	j;
@@ -80,7 +107,7 @@ static void	allocstrings(char **array, const char *s, char c, size_t strs)
 	while (i < strs)
 	{
 		start = j;
-		len = wordlen(s, c, &j);
+		len = word_len(s, c, &j);
 		array[i] = assign(s, start, len);
 		if (!array[i])
 		{
@@ -90,25 +117,4 @@ static void	allocstrings(char **array, const char *s, char c, size_t strs)
 		}
 		i++;
 	}
-}
-
-char	**ft_split(const char *s, char c)
-{
-	char	**strings;
-	size_t	count;
-
-	if (!s)
-		return (0);
-	count = strcount(s, c);
-	strings = (char **)malloc((count + 1) * sizeof(char *));
-	if (!strings)
-		return (0);
-	allocstrings(strings, s, c, count);
-	if (!strings)
-	{
-		free(strings);
-		return (0);
-	}
-	strings[count] = 0;
-	return (strings);
 }
