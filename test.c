@@ -9,6 +9,7 @@ typedef struct s_list
 } t_list;
 
 
+
 int main()
 {
 	//ft_split test
@@ -18,5 +19,8 @@ int main()
 		printf("%s\n", array[i]);
 		printf("%d\n", i);
 	}
+	//ft_itoa test
+	char *itoa = ft_itoa(-0);
+	printf("%s\n", itoa);
 	return (0);
 }

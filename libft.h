@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 09:39:23 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/28 00:09:08 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/28 12:37:45 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	**ft_split(const char *s, char c);
+char	*ft_itoa(int n);
 
 #endif
