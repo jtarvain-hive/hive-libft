@@ -6,13 +6,13 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:20:10 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 13:44:48 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/29 23:14:30 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Fills the ffirst 'n' bytes from 's' with 'c'*/
+/* Fills the first 'n' bytes from 's' with 'c'*/
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t			i;

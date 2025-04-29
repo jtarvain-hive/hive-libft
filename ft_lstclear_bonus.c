@@ -6,8 +6,13 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:10:54 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 17:10:55 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/30 00:14:25 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	
+}
