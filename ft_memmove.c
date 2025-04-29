@@ -6,12 +6,13 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:39:09 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/25 11:59:46 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:44:09 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Copies 'n' bytes from 'src' to 'dest'. If overlap happens, copying from end*/
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t			i;

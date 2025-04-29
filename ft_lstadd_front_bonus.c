@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 14:11:26 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 13:54:16 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/29 16:36:11 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/04/29 16:42:09 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Copying up to size - 1 bytes from 'src' to 'dst'*/
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+/* Adds the node 'new' to the beginning of the list*/
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t	i;
-
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while ((i < size - 1) && *(src + i))
-	{
-		*(dst + i) = *(src + i);
-		i++;
-	}
-	*(dst + i) = '\0';
-	return (ft_strlen(src));
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

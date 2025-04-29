@@ -6,12 +6,13 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 13:58:07 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/23 14:47:06 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:23:44 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Allocates memory for 'nmemb' * 'size' bytes initializing it to 0*/
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*p;

@@ -6,12 +6,13 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 14:47:28 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/28 23:24:29 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:47:01 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Returns a pointer to a (malloc)new string which is a dup of string 's'*/
 char	*ft_strdup(const char *s)
 {
 	char	*p;

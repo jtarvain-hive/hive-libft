@@ -6,10 +6,11 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:25:47 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/15 14:29:35 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/29 15:37:52 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Converts letter to lowercase*/
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')

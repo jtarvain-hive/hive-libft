@@ -6,10 +6,11 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:20:21 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/15 14:28:43 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/29 15:37:53 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Converts letter to uppercase*/
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')

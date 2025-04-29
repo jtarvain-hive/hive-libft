@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 14:11:26 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 13:54:16 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/29 16:36:22 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/04/29 16:40:36 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Copying up to size - 1 bytes from 'src' to 'dst'*/
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+/* Allocates memory and returns new node*/
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*new_node;
 
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while ((i < size - 1) && *(src + i))
-	{
-		*(dst + i) = *(src + i);
-		i++;
-	}
-	*(dst + i) = '\0';
-	return (ft_strlen(src));
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (0);
+	new_node->content = content;
+	new_node->next = 0;
+	return (new_node);
 }

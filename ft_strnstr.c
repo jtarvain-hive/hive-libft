@@ -6,12 +6,13 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:58:54 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/24 11:34:45 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/29 15:38:00 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Locates the first occurrence of the 'little' in 'big' up to 'len' chars*/
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;

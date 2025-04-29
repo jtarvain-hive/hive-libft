@@ -6,10 +6,11 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:45:52 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/24 10:33:29 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:45:33 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Returns a pointer to the first occurrence 'c' in string 's'*/
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;

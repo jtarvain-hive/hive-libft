@@ -6,12 +6,13 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 09:35:12 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/24 23:12:54 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:23:45 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Erases the data in the 'n' bytes of the memory starting at 's'*/
 void	ft_bzero(void *s, size_t n)
 {
 	size_t			i;
