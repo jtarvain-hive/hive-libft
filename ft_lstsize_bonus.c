@@ -6,19 +6,19 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:02:53 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/30 11:52:34 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/01 00:02:04 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /* Counts the number of nodes in the list*/
-int	ft_lstsize(t_list *lst);
+int	ft_lstsize(t_list *lst)
 {
 	int		counter;
 	t_list	*ptr;
 
-	if (!list)
+	if (!lst)
 		return (0);
 	counter = 0;
 	ptr = lst;
