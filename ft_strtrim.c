@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:16:34 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 15:37:56 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:59:59 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		end;
 
 	if (!s1 || !set)
-		return (s1);
+		return ((char *)s1);
 	start = start_index(s1, set);
 	end = end_index(s1, set);
 	new_str = (char *)malloc((end - start + 1) * sizeof(char));
@@ -57,7 +57,8 @@ static int	start_index(const char *s1, const char *set)
 {
 	int	i;
 
-	while (is_set(s1 + i, set))
+	i = 0;
+	while (is_set(*(s1 + i), set))
 		i++;
 	return (i);
 }

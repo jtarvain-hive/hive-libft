@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:50:14 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 15:37:58 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:55:04 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (*(s + i))
 	{
 		if (*(s + i) == c)
-			last = s + i;
+			last = (char *)s + i;
 		i++;
 	}
 	if (!c)

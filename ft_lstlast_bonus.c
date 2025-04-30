@@ -6,13 +6,21 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:06:11 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/30 00:16:25 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/30 11:48:51 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Returns the last node of the list*/
 t_list	*ft_lstlast(t_list *lst)
 {
-	
+	t_list	*ptr;
+
+	if (!lst)
+		return (0);
+	ptr = lst;
+	while (ptr)
+		ptr = ptr->next;
+	return (ptr);
 }

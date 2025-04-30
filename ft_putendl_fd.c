@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:12:05 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 23:09:56 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:53:23 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 /* Outputs the string ’s’ to the specified 'fd' followed by newline*/
 void ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s);
-	ft_putchar('\n');
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
