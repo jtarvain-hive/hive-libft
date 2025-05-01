@@ -1,7 +1,7 @@
 # Compiled binaries
 a.out
-*.o
-*.a
+**/*.o
+**/*.a
 
 # Editor files
 *.swp

@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:20:34 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 13:17:09 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/01 13:46:43 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,30 @@ static size_t	strcount(const char *s, char c)
 	return (counter);
 }
 
+static void	alloc_strings(char **array, const char *s, char c, size_t strs)
+{
+	size_t	i;
+	size_t	j;
+	size_t	start;
+	size_t	len;
+
+	i = 0;
+	j = 0;
+	while (i < strs)
+	{
+		start = j;
+		len = word_len(s, c, &j);
+		array[i] = assign(s, start, len);
+		if (!array[i])
+		{
+			while (i > 0)
+				free(array[--i]);
+			return ;
+		}
+		i++;
+	}
+}
+
 static size_t	word_len(const char *s, char c, size_t *index)
 {
 	size_t	len;
@@ -95,26 +119,3 @@ static char	*assign(const char *s, size_t start, size_t len)
 	return (new_str);
 }
 
-static void	alloc_strings(char **array, const char *s, char c, size_t strs)
-{
-	size_t	i;
-	size_t	j;
-	size_t	start;
-	size_t	len;
-
-	i = 0;
-	j = 0;
-	while (i < strs)
-	{
-		start = j;
-		len = word_len(s, c, &j);
-		array[i] = assign(s, start, len);
-		if (!array[i])
-		{
-			while (i > 0)
-				free(array[--i]);
-			return ;
-		}
-		i++;
-	}
-}
