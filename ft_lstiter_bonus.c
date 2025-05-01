@@ -6,13 +6,21 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:11:12 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/30 00:16:11 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/01 22:13:27 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Iterates through 'lst' and applies 'f' to the content of each node*/
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	t_list	*ptr;
 
+	ptr = lst->next;
+	while (lst->next)
+	{
+		f(lst->content);
+		lst = ptr;
+	}
 }
