@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:10:54 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/30 00:14:25 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/01 18:09:56 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,21 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	
+	if (*lst == NULL)
+	{
+		del(*lst);
+		return ;
+	}
+	else
+	{
+		*lst = (*lst)->next;
+		ft_lstclear(*lst, (*del)(void*));
+		del(*lst);
+	}
+	*lst = NULL;
+}
+
+int main()
+{
+	return (0);
 }
