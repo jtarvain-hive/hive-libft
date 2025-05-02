@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:11:25 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/01 22:24:48 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/02 13:17:32 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,24 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
+	t_list	*next_node;
+	void	*content;
 
 	if (!lst)
-		return (0);
-	if (lst->next == NULL)
+		return (NULL);
+	content = f(lst->content);
+	new = ft_lstnew(content);
+	if (!new)
 	{
-
-		new = (t_list *)malloc(sizeof(t_list));
-		if (!new)
-		{
-			del(lst->content);
-			return (NULL);
-		}
+		del(content);
 		return (NULL);
 	}
-	else
+	next_node = ft_lstmap(lst->next, f, del);
+	if (!next_node && lst->next)
 	{
-		ft_lstmap();
+		ft_lstclear(&new, del);
+		return (NULL);
 	}
+	new->next = next_node;
 	return (new);
 }
