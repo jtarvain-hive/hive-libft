@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:16:34 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/03 22:05:08 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/03 22:52:51 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,13 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (!new_str)
 		return (NULL);
 	i = 0;
-	while (start <= end)
+	while (start + i < end)
 	{
-		new_str[i] = s1[i];
+		new_str[i] = s1[start + i];
 		i++;
-		start++;
 	}
 	new_str[i] = '\0';
 	return (new_str);
-}
-
-#include <stdio.h>
-int main()
-{
-	printf("%s\n", ft_strtrim("   Hello   World   ", " "));
-	return 0;
 }
 
 static int	is_set(const char c, const char *set)
@@ -65,7 +57,7 @@ static int	start_index(const char *s1, const char *set)
 	int	i;
 
 	i = 0;
-	while (is_set(*(s1 + i), set))
+	while (is_set((const char)s1[i], set))
 		i++;
 	return (i);
 }
@@ -74,8 +66,8 @@ static int	end_index(const char *s1, const char *set)
 {
 	int	len;
 
-	len = ft_strlen(s1);
-	while (is_set(*(s1 + len), set))
+	len = ft_strlen(s1) - 1;
+	while (is_set(s1[len], set))
 		len--;
 	return (len);
 }
