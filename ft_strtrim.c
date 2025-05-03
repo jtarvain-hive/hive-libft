@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:16:34 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/30 13:59:59 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/03 22:05:08 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,28 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		end;
 
 	if (!s1 || !set)
-		return ((char *)s1);
+		return (NULL);
 	start = start_index(s1, set);
 	end = end_index(s1, set);
 	new_str = (char *)malloc((end - start + 1) * sizeof(char));
 	if (!new_str)
-		return (0);
+		return (NULL);
 	i = 0;
-	while (start > end)
+	while (start <= end)
 	{
-		*(new_str + i) = *(s1 + start);
+		new_str[i] = s1[i];
 		i++;
 		start++;
 	}
-	*(new_str + i) = 0;
+	new_str[i] = '\0';
 	return (new_str);
+}
+
+#include <stdio.h>
+int main()
+{
+	printf("%s\n", ft_strtrim("   Hello   World   ", " "));
+	return 0;
 }
 
 static int	is_set(const char c, const char *set)

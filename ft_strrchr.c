@@ -6,25 +6,27 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:50:14 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/30 13:55:04 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/03 21:44:10 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /* Returns a pointer to the last occurrence of 'c' found in 's'*/
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
 	char	*last;
+	char	ch;
 
-	i = 0;
-	last = 0;
-	while (*(s + i))
+	last = NULL;
+	ch = (char)c;
+	while (*s)
 	{
-		if (*(s + i) == c)
-			last = (char *)s + i;
-		i++;
+		if (*s == ch)
+			last = (char *)s;
+		s++;
 	}
-	if (!c)
-		return ((char *)s + i);
-	return ((char *)last);
+	if (c == '\0')
+		last = (char *)s;
+	return (last);
 }
