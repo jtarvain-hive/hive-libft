@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:11:12 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/02 11:15:52 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/03 14:28:40 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 /* Iterates through 'lst' and applies 'f' to the content of each node*/
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*ptr;
-
-	ptr = lst->next;
-	while (lst->next)
+	if (!lst)
+		return ;
+	else
 	{
+		ft_lstiter((*lst)->next, f);
 		f(lst->content);
-		lst = ptr;
 	}
 }

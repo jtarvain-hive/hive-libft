@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:12:17 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/01 00:03:14 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/03 19:20:28 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void ft_putnbr_fd(int n, int fd)
 {
 	int	nbr;
 
+	if (fd < 0)
+		return ;
 	nbr = (n % 10) + '0';
 	if (n == INT_MIN)
 	{
@@ -27,11 +29,10 @@ void ft_putnbr_fd(int n, int fd)
 	{
 		write(fd, "-", 1);
 		ft_putnbr_fd(n * -1, fd);
+		return ;
 	}
 	if (n < 10)
-	{
 		return ((void)write(fd, &nbr, 1));
-	}
 	else
 	{
 		ft_putnbr_fd(n / 10, fd);

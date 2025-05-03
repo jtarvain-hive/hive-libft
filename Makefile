@@ -6,7 +6,7 @@
 #    By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 13:46:46 by jtarvain          #+#    #+#              #
-#    Updated: 2025/05/01 13:04:06 by jtarvain         ###   ########.fr        #
+#    Updated: 2025/05/03 15:49:34 by jtarvain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ fclean: clean
 
 re: fclean all
 
-#bonus = $(OBJS) $(BONUS_OBJS)
+#bonus: $(OBJS) $(BONUS_OBJS)
 	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY: all clean fclean re
