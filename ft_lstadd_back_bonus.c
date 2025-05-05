@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:06:24 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/30 23:57:16 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/05 09:36:41 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	ptr = *lst;
 	while (ptr->next)
 		ptr = ptr->next;
-
 	ptr->next = new;
 	new->next = 0;
 }

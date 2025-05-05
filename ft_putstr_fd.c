@@ -6,14 +6,14 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:11:48 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 23:07:19 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/05 09:32:44 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /* Outputs the string ’s’ to the specified 'fd'*/
-void 	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s)
 	{

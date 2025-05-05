@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:08:00 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/03 20:05:57 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/05 09:33:14 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		p[i] = s[start + i];
 		i++;
 	}
-	p[i] ='\0';
+	p[i] = '\0';
 	return (p);
 }

@@ -6,14 +6,14 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:12:17 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/03 19:20:28 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/05 09:34:42 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /* Outputs the integer ’n’ to the specified 'fd'*/
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int	nbr;
 
