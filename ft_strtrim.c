@@ -6,68 +6,36 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:16:34 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/03 22:52:51 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/05 15:55:22 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_set(const char c, const char *set);
-static int	start_index(const char *s1, const char *set);
-static int	end_index(const char *s1, const char *set);
-
 /* Returns a new string without 'set' characters from each end of the string*/
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	char	*new_str;
-	int		i;
-	int		start;
-	int		end;
+	char	*s2;
+	size_t	start;
+	size_t	end;
+	size_t	i;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
-	start = start_index(s1, set);
-	end = end_index(s1, set);
-	new_str = (char *)malloc((end - start + 1) * sizeof(char));
-	if (!new_str)
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1) - 1;
+	while (end > start && ft_strchr(set, s1[end]))
+		end--;
+	s2 = (char *)malloc((end - start + 1) * sizeof(char));
+	if (!s2)
 		return (NULL);
 	i = 0;
-	while (start + i < end)
+	while (start <= end)
 	{
-		new_str[i] = s1[start + i];
-		i++;
+		s2[i++] = s1[start++];
 	}
-	new_str[i] = '\0';
-	return (new_str);
-}
-
-static int	is_set(const char c, const char *set)
-{
-	while (*set)
-	{
-		if (*set == c)
-			return (1);
-		set++;
-	}
-	return (0);
-}
-
-static int	start_index(const char *s1, const char *set)
-{
-	int	i;
-
-	i = 0;
-	while (is_set((const char)s1[i], set))
-		i++;
-	return (i);
-}
-
-static int	end_index(const char *s1, const char *set)
-{
-	int	len;
-
-	len = ft_strlen(s1) - 1;
-	while (is_set(s1[len], set))
-		len--;
-	return (len);
+	s2[i] = '\0';
+	return (s2);
 }

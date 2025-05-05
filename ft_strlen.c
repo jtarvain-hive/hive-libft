@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 12:26:56 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 13:55:05 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:27:56 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	while (*(s + i))
+	while (s[i])
 		i++;
 	return (i);
 }
