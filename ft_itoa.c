@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:47:18 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 13:16:51 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/07 07:28:52 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static char	*alloc_str(long total, int len, int negative);
 /* Converts an integer into a string*/
 char	*ft_itoa(int n)
 {
-	long	convert;
 	char	*return_str;
+	long	convert;
 	int		negative;
 	int		len;
 
