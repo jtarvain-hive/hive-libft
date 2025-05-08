@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:39:09 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 13:44:09 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:22:13 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		i = n;
 		while (i > 0)
 		{
-			*(d + i - 1) = *(s + i - 1);
+			d[i - 1] = s[i - 1];
 			i--;
 		}
 	}
@@ -35,7 +35,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		i = 0;
 		while (i < n)
 		{
-			*(d + i) = *(s + i);
+			d[i] = s[i];
 			i++;
 		}
 	}

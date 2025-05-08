@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 16:25:51 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/28 23:25:33 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:25:07 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int index, char *s))
 	size_t	i;
 
 	i = 0;
-	while (*(s + i))
+	while (s[i])
 	{
 		f(i, s + i);
 		i++;

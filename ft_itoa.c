@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:47:18 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/07 07:28:52 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:18:30 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_itoa(int n)
 		return_str = (char *)malloc(2 * sizeof(char));
 		if (!return_str)
 			return (0);
-		*(return_str + 0) = '0';
-		*(return_str + 1) = 0;
+		return_str[0] = '0';
+		return_str[1] = '\0';
 	}
 	else
 	{

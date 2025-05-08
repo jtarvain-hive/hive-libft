@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:22:42 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/06 13:45:57 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:25:45 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[dst_len + i] = src[i];
 		i++;
 	}
-	dst[dst_len + i] = 0;
+	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }

@@ -6,7 +6,7 @@
 #    By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 13:46:46 by jtarvain          #+#    #+#              #
-#    Updated: 2025/05/06 18:14:22 by jtarvain         ###   ########.fr        #
+#    Updated: 2025/05/08 10:33:07 by jtarvain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	rm -f $(NAME) $(BONUS)
+	rm -f $(NAME)
 
 re: fclean all
 

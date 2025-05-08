@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 14:11:26 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 13:54:16 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:26:33 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	if (size == 0)
 		return (ft_strlen(src));
-	while ((i < size - 1) && *(src + i))
+	while ((i < size - 1) && src[i])
 	{
-		*(dst + i) = *(src + i);
+		dst[i] = src[i];
 		i++;
 	}
-	*(dst + i) = '\0';
+	dst[i] = '\0';
 	return (ft_strlen(src));
 }

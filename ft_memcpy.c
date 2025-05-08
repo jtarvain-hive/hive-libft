@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 13:50:47 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 13:29:55 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:20:54 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	s_byte = (unsigned char *)src;
 	while (i < n)
 	{
-		*(d_byte + i) = *(s_byte + i);
+		d_byte[i] = s_byte[i];
 		i++;
 	}
 	return (dest);

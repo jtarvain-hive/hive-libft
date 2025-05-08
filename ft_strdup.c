@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 14:47:28 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 13:47:01 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:24:57 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ char	*ft_strdup(const char *s)
 	p = (char *)malloc((len + 1) * sizeof(char));
 	if (!p)
 		return (0);
-	while (*(s + i))
+	while (s[i])
 	{
-		*(p + i) = *(s + i);
+		p[i] = s[i];
 		i++;
 	}
-	*(p + i) = 0;
+	p[i] = '\0';
 	return (p);
 }

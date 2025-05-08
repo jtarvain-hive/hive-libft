@@ -6,20 +6,14 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:20:34 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/06 17:44:02 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:23:59 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// static size_t	strcount(const char *s, char c);
-// static size_t	word_len(const char *s, char c, size_t *index);
-// static char		*assign(const char *s, size_t start, size_t len);
-// static void		alloc_strings(char **array, const char *s, char c, size_t strs);
-
 static void		word_count(const char *s, char c, size_t *count);
 static size_t	alloc_strs(char ***array, const char *s, char c, size_t l);
-// static size_t	str_len(const char *s, char c, size_t *start);
 
 /* Splits string 's' into an array of strings using delimiter 'c'*/
 char	**ft_split(const char *s, char c)
@@ -85,134 +79,3 @@ static size_t	alloc_strs(char ***array, const char *s, char c, size_t l)
 	}
 	return (1);
 }
-
-// static size_t	str_len(const char *s, char c, size_t *start)
-// {
-// 	size_t	len;
-
-// 	len = 0;
-// 	while (s[*start] != '\0')
-// 	{
-// 		if (s[*start] == c)
-// 			(*start)++;
-// 		else
-// 		{
-// 			while (s[*start] != c && s[*start] != '\0')
-// 			{
-// 				len++;
-// 				(*start)++;
-// 			}
-// 			while (s[*start] == c)
-// 				(*start)++;
-// 			return (len);
-// 		}
-// 	}
-// 	return (len);
-// }
-// int main()
-// {
-// 	return 0;
-// }
-
-// /* Splits string 's' into an array of strings using delimiter 'c'*/
-// char	**ft_split(const char *s, char c)
-// {
-// 	char	**strings;
-// 	size_t	count;
-
-// 	if (!s)
-// 		return (0);
-// 	count = strcount(s, c);
-// 	strings = (char **)malloc((count + 1) * sizeof(char *));
-// 	if (!strings)
-// 		return (0);
-// 	alloc_strings(strings, s, c, count);
-// 	if (!strings)
-// 	{
-// 		free(strings);
-// 		return (0);
-// 	}
-// 	strings[count] = 0;
-// 	return (strings);
-// }
-
-// static size_t	strcount(const char *s, char c)
-// {
-// 	size_t	counter;
-
-// 	counter = 0;
-// 	while (*s)
-// 	{
-// 		if (*s == c)
-// 			s++;
-// 		else
-// 		{
-// 			counter++;
-// 			while (*s != c)
-// 				s++;
-// 		}
-// 	}
-// 	return (counter);
-// }
-
-// static void	alloc_strings(char **array, const char *s, char c, size_t strs)
-// {
-// 	size_t	i;
-// 	size_t	j;
-// 	size_t	start;
-// 	size_t	len;
-
-// 	i = 0;
-// 	j = 0;
-// 	while (i < strs)
-// 	{
-// 		start = j;
-// 		len = word_len(s, c, &j);
-// 		array[i] = assign(s, start, len);
-// 		if (!array[i])
-// 		{
-// 			while (i > 0)
-// 				free(array[--i]);
-// 			return ;
-// 		}
-// 		i++;
-// 	}
-// }
-
-// static size_t	word_len(const char *s, char c, size_t *index)
-// {
-// 	size_t	len;
-
-// 	len = 0;
-// 	while (*(s + *index) != c && *(s + *index) != 0)
-// 	{
-// 		(*index)++;
-// 		len++;
-// 	}
-// 	if (*(s + *index) == c || *(s + *index) == 0)
-// 	{
-// 		(*index)++;
-// 		return (len);
-// 	}
-// 	else
-// 		return (len);
-// }
-
-// static char	*assign(const char *s, size_t start, size_t len)
-// {
-// 	char	*new_str;
-// 	size_t	i;
-
-// 	i = 0;
-// 	new_str = malloc((len + 1) * sizeof(char));
-// 	if (!new_str)
-// 		return (0);
-// 	while (i < len)
-// 	{
-// 		*(new_str + i) = *(s + start + i);
-// 		i++;
-// 	}
-// 	*(new_str + i) = 0;
-// 	return (new_str);
-// }
-

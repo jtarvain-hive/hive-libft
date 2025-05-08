@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:20:10 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 23:14:30 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:22:29 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	byte = (unsigned char *)s;
 	while (i < n)
 	{
-		*(byte + i) = (unsigned char)c;
+		byte[i] = (unsigned char)c;
 		i++;
 	}
 	return (s);

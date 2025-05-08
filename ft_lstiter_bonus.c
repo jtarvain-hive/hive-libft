@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 17:11:12 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/03 14:28:40 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:41:49 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		return ;
 	else
 	{
-		ft_lstiter((*lst)->next, f);
+		ft_lstiter(lst->next, f);
 		f(lst->content);
 	}
 }

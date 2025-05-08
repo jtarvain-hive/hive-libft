@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:04:46 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 15:38:17 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/08 10:25:32 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		return (0);
 	ft_memcpy(final_str, s1, len1);
 	ft_memcpy((final_str + len1), s2, len2);
-	*(final_str + total_len) = 0;
+	final_str[total_len] = '\0';
 	return (final_str);
 }
