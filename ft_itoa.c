@@ -6,7 +6,7 @@
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:47:18 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/08 10:18:30 by jtarvain         ###   ########.fr       */
+/*   Updated: 2025/05/12 13:25:51 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static int	nbr_len(long nbr)
 	return (total_len);
 }
 
-char	*alloc_str(long total, int len, int negative)
+static char	*alloc_str(long total, int len, int negative)
 {
 	char	*allocated_str;
 
