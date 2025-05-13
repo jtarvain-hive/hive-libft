@@ -6,7 +6,7 @@
 #    By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 13:46:46 by jtarvain          #+#    #+#              #
-#    Updated: 2025/05/08 10:33:07 by jtarvain         ###   ########.fr        #
+#    Updated: 2025/05/13 12:33:35 by jtarvain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,14 +68,17 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS) .bonus
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+.bonus: ${OBJS} ${BONUS_OBJS}
+	ar rcs ${NAME} $^
+	touch $@
 
-.PHONY: all clean fclean re
+bonus: .bonus
+
+.PHONY: all clean fclean re bonus
