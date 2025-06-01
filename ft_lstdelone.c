@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 16:36:22 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/03 16:03:32 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/29 17:10:35 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/05/03 14:29:08 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Allocates memory and returns new node*/
-t_list	*ft_lstnew(void *content)
+/* Frees parameter node's content and then the whole node*/
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	t_list	*new_node;
-
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	if (!lst)
+		return ;
+	del(lst->content);
+	free(lst);
 }

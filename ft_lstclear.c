@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 16:36:11 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/04/29 16:42:09 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/29 17:10:54 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/05/03 15:01:58 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Adds the node 'new' to the beginning of the list*/
-void	ft_lstadd_front(t_list **lst, t_list *new)
+/* Deletes and frees the given node and all its successors, using 'del' & free*/
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!lst || !new)
+	if (!*lst)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	else
+	{
+		ft_lstclear(&((*lst)->next), del);
+		del((*lst)->content);
+		free(*lst);
+		*lst = NULL;
+	}
 }

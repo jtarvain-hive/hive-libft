@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 17:06:11 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/01 00:01:18 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/29 16:02:53 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/05/03 17:52:31 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Returns the last node of the list*/
-t_list	*ft_lstlast(t_list *lst)
+/* Counts the number of nodes in the list*/
+int	ft_lstsize(t_list *lst)
 {
+	int		counter;
 	t_list	*ptr;
 
 	if (!lst)
 		return (0);
+	counter = 0;
 	ptr = lst;
-	while (ptr->next)
+	while (ptr)
+	{
+		counter++;
 		ptr = ptr->next;
-	return (ptr);
+	}
+	return (counter);
 }

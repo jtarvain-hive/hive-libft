@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 17:10:54 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/03 15:01:58 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/29 16:36:22 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/05/03 16:03:32 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Deletes and frees the given node and all its successors, using 'del' & free*/
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+/* Allocates memory and returns new node*/
+t_list	*ft_lstnew(void *content)
 {
-	if (!*lst)
-		return ;
-	else
-	{
-		ft_lstclear(&((*lst)->next), del);
-		del((*lst)->content);
-		free(*lst);
-		*lst = NULL;
-	}
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }

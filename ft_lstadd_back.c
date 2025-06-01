@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 17:11:12 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/08 10:41:49 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/29 17:06:24 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/05/08 13:41:25 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Iterates through 'lst' and applies 'f' to the content of each node*/
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+/* Adds the node 'new' at the end of the list*/
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst)
-		return ;
-	else
+	t_list	*ptr;
+
+	if (!lst || !new)
+		return (ft_putendl_fd("Error, exiting...", 2));
+	if (!(*lst))
 	{
-		ft_lstiter(lst->next, f);
-		f(lst->content);
+		*lst = new;
+		new->next = 0;
+		return ;
 	}
+	ptr = *lst;
+	while (ptr->next)
+		ptr = ptr->next;
+	ptr->next = new;
 }
