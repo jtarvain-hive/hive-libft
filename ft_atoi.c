@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-static int	ft_isspace(int c);
-
 /* Converts a number from a string to an integer*/
 int	ft_atoi(const char *nptr)
 {
@@ -41,9 +39,4 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	}
 	return ((int)(total * negative));
-}
-
-static int	ft_isspace(int c)
-{
-	return ((c >= 9 && c <= 13) || c == 32);
 }

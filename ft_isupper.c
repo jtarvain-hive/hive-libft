@@ -1,4 +1,4 @@
-int	ft_isupper(char c)
+int	ft_isupper(int c)
 {
 	return (c >= 'A' && c <= 'Z');
 }
