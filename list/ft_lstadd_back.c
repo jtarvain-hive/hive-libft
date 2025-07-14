@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 09:32:09 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/06/03 09:29:15 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/04/29 17:06:24 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/05/08 13:41:25 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Outputs the character ’c’ to the specified 'fd'*/
-int	ft_putchar_fd(char c, int fd)
+/* Adds the node 'new' at the end of the list*/
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (write(fd, &c, 1) == -1)
+	t_list	*ptr;
+
+	if (!lst || !new)
+		return ;
+	if (!(*lst))
 	{
-		write(2, "Error in write()\n Exiting...\n", 29);
-		return (-1);
+		*lst = new;
+		new->next = 0;
+		return ;
 	}
-	return (0);
+	ptr = *lst;
+	while (ptr->next)
+		ptr = ptr->next;
+	ptr->next = new;
 }

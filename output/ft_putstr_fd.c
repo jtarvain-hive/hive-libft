@@ -18,10 +18,7 @@ int	ft_putstr_fd(char *s, int fd)
 	while (*s)
 	{
 		if (write(fd, s, 1) == -1)
-		{
-			write(2, "Error in write()\n Exiting...\n", 29);
 			return (-1);
-		}
 		s++;
 	}
 	return (0);

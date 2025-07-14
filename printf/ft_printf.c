@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtarvain <jtarvain@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 17:06:24 by jtarvain          #+#    #+#             */
-/*   Updated: 2025/05/08 13:41:25 by jtarvain         ###   ########.fr       */
+/*   Created: 2025/05/29 15:32:48 by jtarvain          #+#    #+#             */
+/*   Updated: 2025/06/05 15:44:54 by jtarvain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Adds the node 'new' at the end of the list*/
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int	ft_printf(const char *str, ...)
 {
-	t_list	*ptr;
+	va_list	args;
+	int		count;
 
-	if (!lst || !new)
-		return (ft_putendl_fd("Error, exiting...", 2));
-	if (!(*lst))
+	va_start(args, str);
+	count = 0;
+	while (*str)
 	{
-		*lst = new;
-		new->next = 0;
-		return ;
+		if (*str == '%' && *(str + 1) != '\0')
+			parser(&str, &args);
+		else
+			p_putchar(&str, *str, count);
+
 	}
-	ptr = *lst;
-	while (ptr->next)
-		ptr = ptr->next;
-	ptr->next = new;
+	va_end(args);
+	return (0);
+}
+
+int main(void)
+{
+	printf("test int %d\n");
+	return (0);
 }
