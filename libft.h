@@ -13,11 +13,18 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 # include <limits.h>
 # include <stdarg.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# define HEX_L "0123456789abcdef"
+# define HEX_U "0123456789ABCDEF"
 
 typedef struct s_list
 {
@@ -68,8 +75,23 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int		ft_islower(char c);
-int		ft_isupper(char c);
+int		ft_islower(int c);
+int		ft_isupper(int c);
 int		ft_isspace(char c);
+int		ft_printf(const char *str, ...);
+int		p_putchar(int c);
+int		p_putstr(const char *str);
+int		p_putnbr(int n);
+int		p_putunsigned(unsigned int n);
+int		p_putptr(void *p);
+int		p_puthexptr(uintptr_t ptr);
+int		p_puthex(unsigned int n);
+int		p_puthexu(unsigned int n);
+int		parser(const char *str, va_list *args);
+char	*get_next_line(int fd);
+int		find_line(int fd, char *buffer, ssize_t *bytes_read, char **stash);
+char	*gnl_strjoin(char **stash, const char *buffer);
+int		extract_line(char **stash, const char *buffer, char **line);
+size_t	found_line(const char *buffer);
 
 #endif
