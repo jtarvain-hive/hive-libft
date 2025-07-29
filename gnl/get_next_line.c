@@ -67,7 +67,7 @@ char	*gnl_strjoin(char **stash, const char *buffer)
 			return (NULL);
 		}
 		free(*stash);
-		*stash = (NULL);
+		*stash = NULL;
 	}
 	return (str);
 }
