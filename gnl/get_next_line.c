@@ -20,14 +20,11 @@ char	*get_next_line(int fd)
 	size_t		new;
 	ssize_t		bytes_read;
 
+	stash = NULL;
 	if (fd < 0 || fd > 1024)
 		return (NULL);
 	if (!find_line(fd, buffer, &bytes_read, &stash))
-	{
-		if (stash)
-			free(stash);
 		return (NULL);
-	}
 	if (!stash && bytes_read == 0)
 		return (NULL);
 	if (!extract_line(&stash, buffer, &line))
@@ -74,10 +71,7 @@ char	*gnl_strjoin(char **stash, const char *buffer)
 	{
 		str = ft_strjoin(*stash, buffer);
 		if (!str)
-		{
-			*stash = NULL;
-			return (NULL);
-		}
+			return (free(*stash), *stash = NULL, NULL);
 		free(*stash);
 		*stash = NULL;
 	}
@@ -94,11 +88,7 @@ int	extract_line(char **stash, const char *buffer, char **line)
 	{
 		*line = gnl_strjoin(stash, buffer);
 		if (!*line)
-		{
-			free(*stash);
-			*stash = NULL;
-			return (0);
-		}
+			return (free(*stash), *stash = NULL, 0);
 		return (1);
 	}
 	sub = ft_substr(buffer, 0, newline);
