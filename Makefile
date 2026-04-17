@@ -33,6 +33,8 @@ BONUS := list/ft_lstnew.c list/ft_lstadd_front.c list/ft_lstsize.c\
 	list/ft_lstlast.c list/ft_lstadd_back.c list/ft_lstdelone.c\
 	 list/ft_lstclear.c list/ft_lstiter.c list/ft_lstmap.c
 
+MAKEFLAGS += -j
+
 NAME := libft.a
 
 CC := cc
@@ -51,6 +53,7 @@ $(NAME): $(OBJS)
 obj/%.o: */%.c | obj libft.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 
+.NOTPARALLEL: obj
 obj:
 	@mkdir -p $@
 
@@ -60,6 +63,7 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 
+.NOTPARALLEL: re
 re: fclean all
 
 .bonus: ${OBJS} ${BONUS_OBJS}
